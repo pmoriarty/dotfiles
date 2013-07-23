@@ -19,6 +19,8 @@
                       clojure-mode
                       clojure-test-mode
                       clojurescript-mode
+                      nrepl
+                      coffee-mode
                       color-theme
                       color-theme-solarized)
                       
@@ -105,3 +107,8 @@
 
 ;; where did this go in esk?
 (global-set-key (kbd "C-x \\") 'align-regexp)
+
+
+;; Dired
+;;----------------------------------------------------
+(setq dired-listing-switches "-alh --group-directories-first")
