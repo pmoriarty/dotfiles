@@ -4,17 +4,26 @@
 
 dotfilesdir=$(cd $(dirname "$0")/../ && pwd)
 
-for f in $(ls -a $dotfilesdir | egrep -v 'README\.md|DS_Store|\.git$|^\.\.$|^\.$|\.gitmodules|oh-my-zsh')
+function replace_file {
+  src=$1
+  dest=$2
+  if [ -e ${dest} -o -h ${dest} ]; then
+    rm -r ${dest}
+  fi
+  ln -s ${src} ${dest}
+}
+
+for f in $(ls -a ${dotfilesdir} | egrep -v 'README\.md|DS_Store|\.git$|^\.\.$|^\.$|\.gitmodules|\.gitignore|oh-my-zsh|ssh')
 do
-  dest="$HOME/$f"
-  test -e $dest && rm -rf $dest
-  ln -s "$dotfilesdir/$f" $dest
+  dest="${HOME}/.$f"
+  src="${dotfilesdir}/${f}"
+  replace_file ${src} ${dest}
 done
 
-ssh_config="$HOME/.ssh/config" 
-test -e $ssh_config && rm $ssh_config
-ln -s $dotfilesdir/ssh/config $ssh_config
+dest="${HOME}/.ssh/config"
+src="${dotfilesdir}/ssh/config"
+replace_file ${src} ${dest}
 
-zsh_custom="$HOME/.oh-my-zsh/custom"
-test -e $zsh_custom && rm -rf $zsh_custom
-ln -s "$dotfilesdir/oh-my-zsh/custom" $zsh_custom
+dest="${HOME}/.oh-my-zsh/custom"
+src="${dotfilesdir}/oh-my-zsh/custom"
+replace_file ${src} ${dest}
