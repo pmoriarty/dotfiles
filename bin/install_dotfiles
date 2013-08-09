@@ -24,6 +24,6 @@ dest="${HOME}/.ssh/config"
 src="${dotfilesdir}/ssh/config"
 replace_file ${src} ${dest}
 
-dest="${HOME}/.oh-my-zsh/custom"
+dest="${HOME}/.oh-my-zsh-custom"
 src="${dotfilesdir}/oh-my-zsh/custom"
 replace_file ${src} ${dest}

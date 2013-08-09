@@ -7,6 +7,7 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
 
+ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -29,8 +30,8 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git mvn gradle autojump per-directory-history lein postgres)
+plugins=(git git-flow mvn lein postgres gradle)
 
 source $ZSH/oh-my-zsh.sh
-
+source $HOME/.profile
 # Use .profile for PATH
