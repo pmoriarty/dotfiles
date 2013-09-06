@@ -13,7 +13,7 @@ function replace_file {
   ln -s ${src} ${dest}
 }
 
-for f in $(ls -a ${dotfilesdir} | egrep -v 'README\.md|DS_Store|\.git$|^\.\.$|^\.$|\.gitmodules|\.gitignore|oh-my-zsh|ssh')
+for f in $(ls -a ${dotfilesdir} | egrep -v 'README\.md|DS_Store|\.git$|^\.\.$|^\.$|\.gitmodules|\.gitignore|oh-my-zsh|ssh|bin')
 do
   dest="${HOME}/.$f"
   src="${dotfilesdir}/${f}"
