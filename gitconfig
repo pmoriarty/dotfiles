@@ -1,3 +1,5 @@
 [user]
 	email = paudi.moriarty@aviso.io
 	name = Paudi Moriarty
+[core]
+	autocrlf = input

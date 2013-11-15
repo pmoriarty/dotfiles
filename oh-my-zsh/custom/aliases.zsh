@@ -3,9 +3,9 @@ alias sqlplus="rlwrap sqlplus"
 
 ########### dev shortcuts ############
 # gradle
-alias gr="gradle"
-alias grd="gradle rebuildDatabases"
-alias gide="gradle idea"
+alias gr="nocorrect gradle"
+alias grd="gr rebuildDatabases"
+alias gide="gr idea"
 
 # maven
 alias minstall="mvn -DskipTests -Dmaven.test.skip=true clean install"
@@ -16,5 +16,6 @@ alias mdeploydatomic="/usr/share/maven2/bin/mvn deploy:deploy-file -DrepositoryI
 alias krem="pkill -f com.annadaletech.nexus.harness.service.remote"
 
 # ssh
-alias bamboo="ssh bamboo@bamboo-agent1"
+alias bamboo="ssh bamboo@bamboo-agent2"
 
+alias schemaspy="java -jar schemaSpy_5.0.0.jar -t pgsql -host localhost -db switch -s switch -u switch -o /tmp -dp /home/pmoriarty/projects/lib/postgresql-9.2-1002.jdbc4.jar -noads -nologo"
