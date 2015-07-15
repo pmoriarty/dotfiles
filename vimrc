@@ -31,3 +31,6 @@ filetype plugin indent on
 
 " Paredit
 let g:paredit_mode = 0
+
+set background=dark
+colorscheme solarized 

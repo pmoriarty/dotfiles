@@ -1,5 +1,19 @@
 [user]
 	email = paudi.moriarty@aviso.io
 	name = Paudi Moriarty
+	signingkey = C64AE8B8
 [core]
 	autocrlf = input
+	excludesfile = /Users/pmoriarty/.gitignore_global
+[http]
+	sslCert = pmoriarty@annadaletech.com
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+#[commit]
+#	gpgsign = true
+[push]
+	default = simple

@@ -30,8 +30,12 @@ ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-flow mvn lein postgres gradle)
+plugins=(git git-flow mvn lein postgres brew sudo pip python brew mercurial vagrant)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.profile
 # Use .profile for PATH
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
